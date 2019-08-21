@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
 /*
 ###############################################################################
@@ -78,16 +78,16 @@
 		<x_max>500</x_max>
 		<y_min>-500</y_min>
 		<y_max>500</y_max>
-		<z_min>-500</z_min>
-		<z_max>500</z_max>
+		<z_min>-20</z_min>
+		<z_max>20</z_max>
 		<dx>20</dx>
 		<dy>20</dy>
 		<dz>20</dz>
-		<use_2D>false</use_2D>
+<use_2D>true</use_2D>
 	</domain>
 	
 	<overall>
-		<max_time units="min">7200</max_time> <!-- 5 days * 24 h * 60 min -->
+		<max_time units="min">3600</max_time> 
 		<time_units>min</time_units>
 		<space_units>micron</space_units>
 	</overall>
@@ -97,15 +97,15 @@
 	</parallel> 
 	
 	<save>
-		<folder>.</folder> <!-- use . for root --> 
+		<folder>./.</folder> <!-- use . for root --> 
 
 		<full_data>
-			<interval units="min">360</interval>
+	<interval units="min">60</interval>
 			<enable>true</enable>
 		</full_data>
 		
 		<SVG>
-			<interval units="min">60</interval>
+	<interval units="min">60</interval>
 			<enable>true</enable>
 		</SVG>
 		
@@ -115,16 +115,76 @@
 	</save>
 	
 	<user_parameters>
-		<random_seed type="int" units="dimensionless">0</random_seed> 
-		<!-- example parameters from the template --> 
 		
+		<random_seed type="int" units="dimensionless">0</random_seed>
+		
+		<!-- use defaults resets to default cell data --> 
+		<use_defaults type="bool" units="dimensionless">false</use_defaults>
+		
+			<!-- adjust death rate based on radial position or drug concentration --> 
+		<death_modelling type="bool" units="dimensionless">true</death_modelling>
+		
+	<!-- Enforces use of custom_drug_phenotype_rule --> 
+		<diffusion_model type="bool" units="dimensionless">true</diffusion_model>
+	
+		
+		<!-- Enforces use of custom_drug_phenotype_rule --> 
+		<o2_Modelling type="bool" units="dimensionless">false</o2_Modelling>
+		
+		<!-- Applies condition at computational boundary --> 
+		<diffusion_model_boundary type="bool" units="dimensionless">false</diffusion_model_boundary>
+		
+		<!-- Create a sphere/circle of cells or a small number of placed cells --> 
+		<create_sphere type="bool" units="dimensionless">true</create_sphere>
+		
+		<!-- O2 Uptake Rate --> 
+		<o2_uptake_rate type="double" units="dimensionless">10.0</o2_uptake_rate>
+		<o2_boundary type="double" units="dimensionless">60.0</o2_boundary>
+
+		<!-- Cell type determines birth / death rates 1=UCI101, 2=A2780 --> 
+		<cell_type type="int" units="dimensionless">1</cell_type>
+		
+		<!-- Maximum proliferation and apoptosis rate --> 
+		<birth_rate_UCI101 type="double" units="1/min">0.00037</birth_rate_UCI101>
+		<death_rate_UCI101 type="double" units="1/min">0.000</death_rate_UCI101>		
+		<birth_rate_A2780 type="double" units="1/min">0.0009</birth_rate_A2780>
+		<death_rate_A2780 type="double" units="1/min">0.001</death_rate_A2780>
+		
+		<!-- How many cells make up the radius of the sphere  --> 
+		<no_of_cells type="double" units="dimensionless">14</no_of_cells>
+		
+		<!-- Define drug name, diffusion and decay rate  -->
+		<drug type="string" units="dimensionless">cisplatin</drug>
+		<drug_diffusion_rate type="double" units="micro m^2/min">10.0</drug_diffusion_rate>
+		<!--drug_decay_rate type="double" units="1/min">.16</drug_decay_rate>-->
+		<drug_decay_rate type="double" units="1/min">0.0</drug_decay_rate>
+		
+		<!-- What is the boundary value for the drug  --> 
+		<drug_boundary_condition type="double" units="dimensionless">5.0</drug_boundary_condition>
+	
+		<!-- Apply Dirichlet or Neumann conditions for drug --> 
+		<Dirichlet type="bool" units="dimensionless">true</Dirichlet>
+
+		<!-- Source Cell Secretion  --> 
+		<device_secretion_rate type="double" units="1/min">1000.0</device_secretion_rate>
+		<add_device_secretion type="bool" units="dimensionless">false</add_device_secretion>
+
+		<!-- If not using cell defaults sets the  cell radius   --> 
+		<cell_radius type="double" units="micron">7.5</cell_radius>
+		
+		<!-- Death Rate model   1=Linear, 2=Exponential decay--> 
+		<death_rate_type type="int" units="dimensionless">2</death_rate_type>
+		
+		<!-- Adjusts the exponential death rate model  --> 
+		<standard_deviation type="double" units="dimensionless">0.2</standard_deviation>
+
 		<!-- motile cell type parameters --> 
 		<motile_cell_persistence_time type="double" units="min">15</motile_cell_persistence_time>
 		<motile_cell_migration_speed type="double" units="micron/min">0.25</motile_cell_migration_speed> 
 		<motile_cell_relative_adhesion type="double" units="dimensionless">0.05</motile_cell_relative_adhesion>
 		<motile_cell_apoptosis_rate type="double" units="1/min">0.0</motile_cell_apoptosis_rate> 
 		<motile_cell_relative_cycle_entry_rate type="double" units="dimensionless">0.1</motile_cell_relative_cycle_entry_rate>
-		
+	
 	</user_parameters>
 	
 	

@@ -185,6 +185,7 @@ int main( int argc, char* argv[] )
 					save_PhysiCell_to_MultiCellDS_xml_pugi( filename , microenvironment , PhysiCell_globals.current_time ); 
 				}
 				
+			//	calc_cell_states();
 				PhysiCell_globals.full_output_index++; 
 				PhysiCell_globals.next_full_save_time += PhysiCell_settings.full_save_interval;
 			}
@@ -197,6 +198,10 @@ int main( int argc, char* argv[] )
 					sprintf( filename , "%s/snapshot%08u.svg" , PhysiCell_settings.folder.c_str() , PhysiCell_globals.SVG_output_index ); 
 					SVG_plot( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, cell_coloring_function );
 					
+					// Put in some code here
+			
+					//
+
 					PhysiCell_globals.SVG_output_index++; 
 					PhysiCell_globals.next_SVG_save_time  += PhysiCell_settings.SVG_save_interval;
 				}
@@ -210,8 +215,21 @@ int main( int argc, char* argv[] )
 			
 			/*
 			  Custom add-ons could potentially go here. 
-			*/			
-			
+				// Ad in code to update birth and death rates based on position
+
+
+			*/	
+		
+
+			if (parameters.bools("death_modelling")==true)
+			{
+
+				if (parameters.bools("diffusion_model")==false) // radial based updates
+				{
+					adjust_death_rates();	
+       //      	  std::cout << __FILE__ << " : " << __FUNCTION__ << " : " << __LINE__ <<"  "<<"Standard Death Rate Modelling Update"<< std::endl;
+				}
+			}
 			PhysiCell_globals.current_time += diffusion_dt;
 		}
 
@@ -242,3 +260,4 @@ int main( int argc, char* argv[] )
 
 	return 0; 
 }
+

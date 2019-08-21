@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/bin/invoke_app "$@" -C "start_jupyter -A -T @tool nano.ipynb" -t nanotest \
+/usr/bin/invoke_app "$@" -C "start_jupyter -A -T @tool nano.ipynb" -t cspmod \
                          -u anaconda3-5.1

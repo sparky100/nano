@@ -71,11 +71,9 @@
 using namespace BioFVM; 
 using namespace PhysiCell;
 
-void tumor_cell_phenotype_with_oncoprotein( Cell* pCell, Phenotype& phenotype, double dt ); 
-
 // any additional cell types (beyond cell_defaults)
 
-extern Cell_Definition motile_cell; 
+extern Cell_Definition source_cell; 
 
 // custom cell phenotype functions could go here 
 
@@ -84,8 +82,16 @@ extern Cell_Definition motile_cell;
 void create_cell_types( void );
 void setup_tissue( void ); 
 
+void update_uptake_rate(Cell* pCell, double extracellular,double intracellular);
+double calc_intracellular_concentration(double extracellularconcentration, double simulationtime);
+double calc_survival_rate (double intracellularconcentration);
+void  calc_death_rate(double timestep,  Cell* pCell, double drug, Phenotype& phenotype,double simulationtime);
+void update_custom_data(Cell* pCell, double extracellular, double survival_rate, double intracellular, double upd_time);
+void custom_cisplatin_phenotype_rule( Cell* pCell, Phenotype& phenotype, double dt );
+void adjust_death_rates( void );
 // set up the BioFVM microenvironment 
 void setup_microenvironment( void ); 
+void calc_cell_states(void);
 
 // custom pathology coloring function 
 
