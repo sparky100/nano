@@ -119,27 +119,27 @@
 		<random_seed type="int" units="dimensionless">0</random_seed>
 		
 		<!-- use defaults resets to default cell data --> 
-		<use_defaults type="bool" units="dimensionless">false</use_defaults>
+		<use_defaults type="bool" units="dimensionless" description="Use PhysiCell cell defaults">false</use_defaults>
 		
 			<!-- adjust death rate based on radial position or drug concentration --> 
-		<death_modelling type="bool" units="dimensionless">true</death_modelling>
+		<death_modelling type="bool" units="dimensionless" description="Apply a death model">true</death_modelling>
 		
 	<!-- Enforces use of custom_drug_phenotype_rule --> 
-		<diffusion_model type="bool" units="dimensionless">true</diffusion_model>
+		<diffusion_model type="bool" units="dimensionless" description="Use the cisplation diffusion model">true</diffusion_model>
 	
 		
 		<!-- Enforces use of custom_drug_phenotype_rule --> 
-		<o2_Modelling type="bool" units="dimensionless">false</o2_Modelling>
+		<o2_Modelling type="bool" units="dimensionless" description="Apply O2 Modelling">false</o2_Modelling>
 		
 		<!-- Applies condition at computational boundary --> 
-		<diffusion_model_boundary type="bool" units="dimensionless">false</diffusion_model_boundary>
+		<diffusion_model_boundary type="bool" units="dimensionless" description="Apply substrate conditions at comupational boundary">false</diffusion_model_boundary>
 		
 		<!-- Create a sphere/circle of cells or a small number of placed cells --> 
-		<create_sphere type="bool" units="dimensionless">true</create_sphere>
+		<create_sphere type="bool" units="dimensionless" description="Create a shpere of cells">true</create_sphere>
 		
 		<!-- O2 Uptake Rate --> 
-		<o2_uptake_rate type="double" units="dimensionless">10.0</o2_uptake_rate>
-		<o2_boundary type="double" units="dimensionless">60.0</o2_boundary>
+		<o2_uptake_rate type="double" units="dimensionless" description="Set the O2 uptake rate">10.0</o2_uptake_rate>
+		<o2_boundary type="double" units="dimensionless" description="O2 boundary value">60.0</o2_boundary>
 
 		<!-- Cell type determines birth / death rates 1=UCI101, 2=A2780 --> 
 		<cell_type type="int" units="dimensionless">1</cell_type>
@@ -151,29 +151,29 @@
 		<death_rate_A2780 type="double" units="1/min">0.001</death_rate_A2780>
 		
 		<!-- How many cells make up the radius of the sphere  --> 
-		<no_of_cells type="double" units="dimensionless">14</no_of_cells>
+		<no_of_cells type="double" units="dimensionless" description="Cells in sphere radius">14</no_of_cells>
 		
 		<!-- Define drug name, diffusion and decay rate  -->
-		<drug type="string" units="dimensionless">cisplatin</drug>
-		<drug_diffusion_rate type="double" units="micro m^2/min">10.0</drug_diffusion_rate>
+		<drug type="string" units="dimensionless" description="Drug name">cisplatin</drug>
+		<drug_diffusion_rate type="double" units="micro m^2/min" description="Drug diffusion rate">10.0</drug_diffusion_rate>
 		<!--drug_decay_rate type="double" units="1/min">.16</drug_decay_rate>-->
-		<drug_decay_rate type="double" units="1/min">0.0</drug_decay_rate>
+		<drug_decay_rate type="double" units="1/min" description="Drug decay rate">0.0</drug_decay_rate>
 		
 		<!-- What is the boundary value for the drug  --> 
-		<drug_boundary_condition type="double" units="dimensionless">5.0</drug_boundary_condition>
+		<drug_boundary_condition type="double" units="dimensionless" description="Drug boundary value">5.0</drug_boundary_condition>
 	
 		<!-- Apply Dirichlet or Neumann conditions for drug --> 
-		<Dirichlet type="bool" units="dimensionless">true</Dirichlet>
+		<Dirichlet type="bool" units="dimensionless" description="Apply Dircihlet of Neuman condition">true</Dirichlet>
 
 		<!-- Source Cell Secretion  --> 
 		<device_secretion_rate type="double" units="1/min">1000.0</device_secretion_rate>
 		<add_device_secretion type="bool" units="dimensionless">false</add_device_secretion>
 
 		<!-- If not using cell defaults sets the  cell radius   --> 
-		<cell_radius type="double" units="micron">7.5</cell_radius>
+		<cell_radius type="double" units="micron" description="Cell radius">7.5</cell_radius>
 		
 		<!-- Death Rate model   1=Linear, 2=Exponential decay--> 
-		<death_rate_type type="int" units="dimensionless">2</death_rate_type>
+		<death_rate_type type="int" units="dimensionless" description="1=Linear, 2=Exponential decay">2</death_rate_type>
 		
 		<!-- Adjusts the exponential death rate model  --> 
 		<standard_deviation type="double" units="dimensionless">0.2</standard_deviation>

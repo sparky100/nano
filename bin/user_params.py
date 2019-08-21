@@ -319,21 +319,21 @@ class UserTab(object):
 
         desc_button1 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button1.style.button_color = 'lightgreen'
-        desc_button2 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button2 = Button(description='Use PhysiCell cell defaults', disabled=True, layout=desc_button_layout) 
         desc_button2.style.button_color = 'tan'
-        desc_button3 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button3 = Button(description='Apply a death model', disabled=True, layout=desc_button_layout) 
         desc_button3.style.button_color = 'lightgreen'
-        desc_button4 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button4 = Button(description='Use the cisplation diffusion model', disabled=True, layout=desc_button_layout) 
         desc_button4.style.button_color = 'tan'
-        desc_button5 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button5 = Button(description='Apply O2 Modelling', disabled=True, layout=desc_button_layout) 
         desc_button5.style.button_color = 'lightgreen'
-        desc_button6 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button6 = Button(description='Apply substrate conditions at comupational boundary', disabled=True, layout=desc_button_layout) 
         desc_button6.style.button_color = 'tan'
-        desc_button7 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button7 = Button(description='Create a shpere of cells', disabled=True, layout=desc_button_layout) 
         desc_button7.style.button_color = 'lightgreen'
-        desc_button8 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button8 = Button(description='Set the O2 uptake rate', disabled=True, layout=desc_button_layout) 
         desc_button8.style.button_color = 'tan'
-        desc_button9 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button9 = Button(description='O2 boundary value', disabled=True, layout=desc_button_layout) 
         desc_button9.style.button_color = 'lightgreen'
         desc_button10 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button10.style.button_color = 'tan'
@@ -345,25 +345,25 @@ class UserTab(object):
         desc_button13.style.button_color = 'lightgreen'
         desc_button14 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button14.style.button_color = 'tan'
-        desc_button15 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button15 = Button(description='Cells in sphere radius', disabled=True, layout=desc_button_layout) 
         desc_button15.style.button_color = 'lightgreen'
-        desc_button16 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button16 = Button(description='Drug name', disabled=True, layout=desc_button_layout) 
         desc_button16.style.button_color = 'tan'
-        desc_button17 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button17 = Button(description='Drug diffusion rate', disabled=True, layout=desc_button_layout) 
         desc_button17.style.button_color = 'lightgreen'
-        desc_button18 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button18 = Button(description='Drug decay rate', disabled=True, layout=desc_button_layout) 
         desc_button18.style.button_color = 'tan'
-        desc_button19 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button19 = Button(description='Drug boundary value', disabled=True, layout=desc_button_layout) 
         desc_button19.style.button_color = 'lightgreen'
-        desc_button20 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button20 = Button(description='Apply Dircihlet of Neuman condition', disabled=True, layout=desc_button_layout) 
         desc_button20.style.button_color = 'tan'
         desc_button21 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button21.style.button_color = 'lightgreen'
         desc_button22 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button22.style.button_color = 'tan'
-        desc_button23 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button23 = Button(description='Cell radius', disabled=True, layout=desc_button_layout) 
         desc_button23.style.button_color = 'lightgreen'
-        desc_button24 = Button(description='', disabled=True, layout=desc_button_layout) 
+        desc_button24 = Button(description='1=Linear, 2=Exponential decay', disabled=True, layout=desc_button_layout) 
         desc_button24.style.button_color = 'tan'
         desc_button25 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button25.style.button_color = 'lightgreen'
