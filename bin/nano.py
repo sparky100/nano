@@ -233,7 +233,7 @@ def run_sim_func(s):
             s.run(run_name, "-v ncn-hub_M@brown -n 8 -w 1440 nano-r7 config.xml")   # "-r7" suffix??
         else:
             # read_config.index = 0   # reset Dropdown 'Load Config' to 'DEFAULT' when Run interactively
-            s.run(run_name, "--local ../bin/myproj config.xml")
+            s.run(run_name, "--local ../bin/myproj.exe config.xml")
     else:
         # reset Dropdown 'Load Config' to 'DEFAULT' when Run interactively
         # Warning: this will trigger read_config_cb() !!
