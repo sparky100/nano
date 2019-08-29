@@ -1,8 +1,2 @@
 nano
 matplotlib 
-about
-config
-debug
-substrates
-svg
-user_params
